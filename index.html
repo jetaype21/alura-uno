@@ -1,12 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encriptador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
+  <body class="bg-slate-200">
+    <main
+      class="w-11/12 max-w-screen-lg mx-auto min-h-screen md:flex gap-2 p-5"
+    >
+      <form class="flex-1 flex flex-col items-center justify-between p-5">
+        <textarea
+          name="user"
+          id="text_user"
+          placeholder="Ingresa tu texto aquí!"
+          class="w-full bg-transparent md:text-2xl border-none outline-none text-sky-800 flex-1"
+        ></textarea>
+
+        <section class="buttons-user w-full">
+          <p>! No use mayúsculas ni acentos raros</p>
+
+          <article
+            class="flex flex-col md:flex-row justify-around w-full gap-2"
+          >
+            <button
+              id="btn-encriptar"
+              class="bg-blue-800 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2"
+            >
+              Encriptar
+            </button>
+            <button
+              id="btn-desencriptar"
+              class="bg-slate-500 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2"
+            >
+              Descincriptar
+            </button>
+          </article>
+        </section>
+      </form>
+
+      <section class="flex-1 bg-white rounded-xl p-5">
+        <article class="text-result-faild hidden">
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="#000000"
+            class="svg-search hidden md:block"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <defs>
+                <path
+                  id="search-a"
+                  d="M11.7099609,0.572509766 C9.46940104,1.29012044 7.99951172,3.05419922 7.30029297,5.86474609 C6.25146484,10.0805664 4.95166016,10.6181641 0.719970703,9.11865234 C2.23974609,11.9257813 5.32006836,13.0512695 7.30029297,13.0512695 C9.28051758,13.0512695 14.4091797,10.2941895 13.8215332,5.0534668 C13.3114421,3.52709961 12.6075846,2.03344727 11.7099609,0.572509766 Z"
+                ></path>
+                <path
+                  id="search-c"
+                  d="M14.1791377,12.7701494 L19.7100661,18.3101411 C20.0966446,18.6967197 20.0966446,19.3234875 19.7100661,19.7100661 C19.3234875,20.0966446 18.6967197,20.0966446 18.3101411,19.7100661 L12.7803471,14.1712106 C11.4385246,15.2160226 9.75152329,15.8383427 7.91917136,15.8383427 C3.54553379,15.8383427 0,12.2928089 0,7.91917136 C0,3.54553379 3.54553379,0 7.91917136,0 C12.2928089,0 15.8383427,3.54553379 15.8383427,7.91917136 C15.8383427,9.74688445 15.2191696,11.4299819 14.1791377,12.7701494 Z M7.91917136,13.8585499 C11.1993995,13.8585499 13.8585499,11.1993995 13.8585499,7.91917136 C13.8585499,4.63894318 11.1993995,1.97979284 7.91917136,1.97979284 C4.63894318,1.97979284 1.97979284,4.63894318 1.97979284,7.91917136 C1.97979284,11.1993995 4.63894318,13.8585499 7.91917136,13.8585499 Z"
+                ></path>
+              </defs>
+              <g fill="none" fill-rule="evenodd" transform="translate(2 2)">
+                <g transform="translate(1 2)">
+                  <mask id="search-b" fill="#ffffff">
+                    <use xlink:href="#search-a"></use>
+                  </mask>
+                  <use fill="#D8D8D8" xlink:href="#search-a"></use>
+                  <g fill="#FFA0A0" mask="url(#search-b)">
+                    <rect
+                      width="24"
+                      height="24"
+                      transform="translate(-3 -4)"
+                    ></rect>
+                  </g>
+                </g>
+                <mask id="search-d" fill="#ffffff">
+                  <use xlink:href="#search-c"></use>
+                </mask>
+                <use
+                  fill="#000000"
+                  fill-rule="nonzero"
+                  xlink:href="#search-c"
+                ></use>
+                <g fill="#7600FF" mask="url(#search-d)">
+                  <rect
+                    width="24"
+                    height="24"
+                    transform="translate(-2 -2)"
+                  ></rect>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <article class="text-center">
+            <h2 class="text-xl md:text-3xl">Ningun mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+          </article>
+        </article>
+
+        <article
+          class="text-result-success flex flex-col justify-between h-full"
+        >
+          <p class="text-lg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
+            laboriosam perferendis sequi dolorum, harum aliquid! Fugiat maiores
+            atque asperiores voluptatum aliquam excepturi magnam cupiditate?
+            Dolor modi eaque eius repellat dolore.
+          </p>
+
+          <button
+            class="w-full bg-blue-800 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2 mt-2"
+          >
+            Copiar
+          </button>
+        </article>
+      </section>
+    </main>
     <script src="./index.js"></script>
   </body>
 </html>

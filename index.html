@@ -43,7 +43,7 @@
       </form>
 
       <section class="flex-1 bg-white rounded-xl p-5">
-        <article class="text-result-faild hidden">
+        <article class="tresult-faild">
           <svg
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -107,9 +107,9 @@
         </article>
 
         <article
-          class="text-result-success flex flex-col justify-between h-full"
+          class="result-success flex flex-col justify-between h-full hidden"
         >
-          <p class="text-lg">
+          <p class="text-lg" id="text-result-success">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
             laboriosam perferendis sequi dolorum, harum aliquid! Fugiat maiores
             atque asperiores voluptatum aliquam excepturi magnam cupiditate?
@@ -117,6 +117,7 @@
           </p>
 
           <button
+            id="btn-copy"
             class="w-full bg-blue-800 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2 mt-2"
           >
             Copiar

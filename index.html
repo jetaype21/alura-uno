@@ -12,7 +12,9 @@
     <main
       class="w-11/12 max-w-screen-lg mx-auto min-h-screen md:flex gap-2 p-5"
     >
-      <form class="flex-1 flex flex-col items-center justify-between p-5">
+      <section
+        class="form-text flex-1 flex flex-col items-center justify-between p-5"
+      >
         <textarea
           name="user"
           id="text_user"
@@ -29,21 +31,23 @@
             <button
               id="btn-encriptar"
               class="bg-blue-800 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2"
+              disabled
             >
               Encriptar
             </button>
             <button
               id="btn-desencriptar"
               class="bg-slate-500 text-lg rounded-lg md:rounded-xl text-white p-1 md:p-2"
+              disabled
             >
               Descincriptar
             </button>
           </article>
         </section>
-      </form>
+      </section>
 
       <section class="flex-1 bg-white rounded-xl p-5">
-        <article class="tresult-faild">
+        <article class="result-faild">
           <svg
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -109,12 +113,7 @@
         <article
           class="result-success flex flex-col justify-between h-full hidden"
         >
-          <p class="text-lg" id="text-result-success">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis
-            laboriosam perferendis sequi dolorum, harum aliquid! Fugiat maiores
-            atque asperiores voluptatum aliquam excepturi magnam cupiditate?
-            Dolor modi eaque eius repellat dolore.
-          </p>
+          <p class="text-lg" id="text-result-success"></p>
 
           <button
             id="btn-copy"
